@@ -35,6 +35,7 @@
    String str = new String((request.getParameter("name")).getBytes("ISO-8859-1"),"UTF-8");
 	//String str = URLEncoder.encode(request.getParameter("name"),"utf-8"); 
 	out.println(str);
+	out.println(request.getCharacterEncoding());
 	 // 设置 name 和 url cookie 
 	   Cookie name = new Cookie("name",
 			   URLEncoder.encode(request.getParameter("name"),"utf-8"));
@@ -48,7 +49,16 @@
 	   // 在响应头部添加cookie
 	   response.addCookie( name );
 	   response.addCookie( url );
+	   
+	   
+	   
 %>
+
+
+
+
+
+
 <html>
 <head>
 <title>设置 Cookie</title>

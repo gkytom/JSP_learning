@@ -70,7 +70,9 @@
 </html>
 --%>
 
+
 <%--JSP Session测试   --%>
+<%-- 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*" %>
@@ -134,9 +136,61 @@
 </table> 
 </body>
 </html>
+--%>
+
+<%--测试JSP的Date类 --%>
+<%--<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*" %>
+<%@ page import="javax.servlet.*,java.text.*" %>
+<html>
+<head>
+<title>显示当前时间与日期</title>
+</head>
+<body>
+
+<h1>显示当前时间与日期</h1>
+
+<%
+   Date date = new Date(102,11,12,20,20,20);
+   out.print( "<h2 align=\"center\">" +date.toString()+"</h2>");
+   SimpleDateFormat ft = 
+		   new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
+		   out.print( "<h2 align=\"center\">" + ft.format(date) + "</h2>");
+	out.print("<h3>"+date.getYear()+"</h3>");
+%>
+</body>
+</html>
+ --%>
+ 
+ <%--页面资源重定向 --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*" %>
+<html>
+<html>
+<head>
+<title>页面重定向</title>
+</head>
+<body>
+
+<h1>页面重定向</h1>
+
+<%--
+   // 重定向到新地址
+   String site = new String("http://www.baidu.com");
+   response.setStatus(response.SC_MOVED_TEMPORARILY);
+   response.setHeader("Location", site);     //location表明用户去哪里获取资源文件
+--%>
+<%--
+
+	response.sendRedirect("http://www.baidu.com");
+
+--%>
 
 
-
+</body>
+</html>
 
 
 
